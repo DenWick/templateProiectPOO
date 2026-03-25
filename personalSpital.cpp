@@ -8,6 +8,7 @@ personalSpital::personalSpital(std::string n, std::string f) : nume(n), functie(
     id = ++idCounter;
 }
 
+// Metoda de afisare a informatiilor despre personalul spitalului
 void personalSpital::afisare() const {
     std::cout << "ID: " << id << "| Nume: " << nume << "| Functie: " << functie << std::endl;
 }

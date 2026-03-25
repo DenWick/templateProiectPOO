@@ -12,6 +12,6 @@ class personalSpital {
         personalSpital(std::string n, std::string f);
 
         int getId() const { return id; }
-
+        
         virtual void afisare() const = 0;
 };

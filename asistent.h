@@ -4,9 +4,9 @@
 #include "personalSpital.h"
 
 class asistent : virtual public personalSpital {
-    private:
+    protected:
         std::string specializare;
-        std::string programLucru;
+        std::string oreLucru;
     public:
         asistent(std::string n, std::string f, std::string s, std::string p);
 

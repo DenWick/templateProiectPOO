@@ -3,7 +3,7 @@
 #include <string>
 
 class medic : virtual public personalSpital {
-    private:
+    protected:
         std::string specializare;
         int salariu;
     public:
