@@ -5,8 +5,10 @@
 #include <iostream>
 #include <string>
 
+// Constructor pentru meniuSpital
 meniuSpital::meniuSpital() : spitalulMeu("Spitalul judetean") {} 
 
+// Metoda pentru afișarea meniului
 void meniuSpital::afisareMeniu() const {
     std::cout<<" ---------- SISTEM GESTIUNE SPITAL ---------- "<<std::endl;
     std::cout<<"1. Adauga personal spital"<<std::endl;
@@ -19,6 +21,7 @@ void meniuSpital::afisareMeniu() const {
     std::cout<<"Alege o optiune: ";
 }
 
+// Functia de rulare a meniului
 void meniuSpital::ruleaza() {
     int optiune = -1;
     while(optiune != 0){   
@@ -31,6 +34,7 @@ void meniuSpital::ruleaza() {
         }
 
         try {
+            // Adaugare personal
             if (optiune == 1) {
                 std::cout << "Ce doriti sa adaugati?\n";
                 std::cout << "1. Medic\n2. Asistent\n3. Rezident\n";
@@ -64,6 +68,7 @@ void meniuSpital::ruleaza() {
                 }
                 std::cout << "Adaugat cu succes!\n";
             }
+            // Adaugare pacient
             else if(optiune == 2){
                 std::string nume;
                 int varsta;
@@ -73,9 +78,11 @@ void meniuSpital::ruleaza() {
                 spitalulMeu.adaugaPacient(new pacient(nume, varsta));
                 std::cout << "Pacient adaugat cu succes!\n";
             }
+            // Afisare raport general
             else if(optiune == 3){
                 spitalulMeu.afisare();
             }
+            // Modificare salariu medic
             else if(optiune == 4){
 
 
@@ -83,6 +90,7 @@ void meniuSpital::ruleaza() {
 
 
             }
+            // Stergere pacient
             else if(optiune == 5){
                 std::string numePacient;
                 std::cout << "Nume pacient de sters: "; std::cin >> numePacient;
