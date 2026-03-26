@@ -1,4 +1,5 @@
 #include "spital.h"
+#include "exceptiiSpital.h"
 #include <iostream>
 
 // Constructor
@@ -33,7 +34,7 @@ void spital::stergePacient(std::string numeCautat) {
         }
     }
     if (!gasit) {
-        std::cout << "Pacientul cu numele " << numeCautat << " nu a fost gasit.\n";
+        throw IDNotFoundException();
     }
 }
 
