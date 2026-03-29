@@ -14,6 +14,27 @@ void reteta::adaugaMedicament(std::string medicament) {
     medicamente.push_back(medicament);
 }
 
+// Implementarea constructorului de copiere
+reteta::reteta(const reteta& alta) {
+    this-> denumire = alta.denumire;
+    this-> medicamente = alta.medicamente;
+
+    contorRetete++;
+    this-> idReteta = contorRetete;
+}
+
+// Implementarea operatorului de atribuire
+reteta& reteta::operator=(const reteta& alta){
+    if (this == &alta) {
+        return *this;
+    }
+    this->denumire = alta.denumire;
+    this->medicamente = alta.medicamente;
+    this->idReteta = alta.idReteta;
+    return *this;
+}
+
+
 // Implementarea metodei pentru afișarea informațiilor despre rețetă
 void reteta::afiseaza() const {
     std::cout << "Reteta ID: " << idReteta << "\n";

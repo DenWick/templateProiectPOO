@@ -11,6 +11,8 @@ class reteta {
         std::vector<std::string> medicamente;
     public:
         reteta(std::string denumire);
+        reteta(const reteta& alta);
+        reteta& operator=(const reteta& alta);
         void adaugaMedicament(std::string medicament);
         void afiseaza() const;
 
