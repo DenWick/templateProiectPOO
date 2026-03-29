@@ -63,6 +63,30 @@ void spital::afisare() const {
     }
 }
 
+// Modificare salariu medic
+void spital::modificaSalariuMedic(int idCautat, int salariuNou) {
+    bool gasit = false;
+
+    for (auto p : personal) {
+        if (p->getId() == idCautat) {
+            medic* m = dynamic_cast<medic*>(p);
+
+            if (m != nullptr) {
+                m->setSalariu(salariuNou);
+                std::cout << "Salariul pentru medicul cu ID " << idCautat << " a fost actualizat la " << salariuNou << ".\n";
+                gasit = true;
+                break;
+            } else {
+                throw std::runtime_error("Angajatul cu ID-ul respectiv nu este medic (nu are salariu de modificat).");
+            }
+        }
+    }
+
+    if (!gasit) {
+        throw std::runtime_error("Eroare: Medicul cu ID-ul " + std::to_string(idCautat) + " nu a fost gasit!");
+    }
+}
+
 // Destructor
 spital::~spital() {
     for (auto& p : personal) {

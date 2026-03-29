@@ -25,6 +25,9 @@ class spital {
         // Stergere pacient
         void stergePacient(std::string numePacient);
 
+        // Modificare salariu medic
+        void modificaSalariuMedic(int idCautat, int salariuNou);
+
         // Afisare informatii spital
         void afisare() const;
 

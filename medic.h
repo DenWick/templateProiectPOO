@@ -11,5 +11,7 @@ class medic : virtual public personalSpital {
 
         void afisare() const override;
 
+        void setSalariu(int sal) { salariu = sal; }
+
         virtual ~medic() {}
 };

@@ -84,11 +84,17 @@ void meniuSpital::ruleaza() {
             }
             // Modificare salariu medic
             else if(optiune == 4){
+                int idDeCautat, salariuNou;
+                std::cout << "Introduceti ID-ul medicului: ";
+                std::cin >> idDeCautat;
+                std::cout << "Introduceti noul salariu: ";
+                std::cin >> salariuNou;
 
-
-
-
-
+                try {
+                    spitalulMeu.modificaSalariuMedic(idDeCautat, salariuNou);
+                } catch (const std::exception& e) {
+                    std::cout << e.what() << std::endl;
+                }
             }
             // Stergere pacient
             else if(optiune == 5){
