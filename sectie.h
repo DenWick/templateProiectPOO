@@ -11,5 +11,5 @@ class sectie {
         sectie(std::string n);
         void adaugaMedic(medic* m);
         void afisare() const;
-        ~sectie() {}
+        ~sectie();
 };
