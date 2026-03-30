@@ -14,4 +14,6 @@ class personalSpital {
         int getId() const { return id; }
         
         virtual void afisare() const = 0;
+
+        virtual ~personalSpital() {}
 };

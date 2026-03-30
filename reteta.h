@@ -16,5 +16,5 @@ class reteta {
         void adaugaMedicament(std::string medicament);
         void afiseaza() const;
 
-        ~reteta() = default;
+        ~reteta();
 };
