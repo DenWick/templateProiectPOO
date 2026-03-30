@@ -1,5 +1,5 @@
 #pragma once
-#include "Spital.h"
+#include "spital.h"
 
 class meniuSpital {
     private:
