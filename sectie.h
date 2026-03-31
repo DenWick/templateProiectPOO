@@ -9,7 +9,7 @@ class sectie {
         std::vector<medic*> medici;
     public:
         sectie(std::string n);
-        [[maybe_unused]] void adaugaMedic(medic* m);
+        /* void adaugaMedic(medic* m); */
         void afisare() const;
         ~sectie();
 };

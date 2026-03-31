@@ -13,7 +13,7 @@ class reteta {
         reteta(std::string denumire);
         reteta(const reteta& alta);
         reteta& operator=(const reteta& alta);
-        [[maybe_unused]] void adaugaMedicament(std::string medicament);
+        /* void adaugaMedicament(std::string medicament);*/
         void afiseaza() const;
 
         ~reteta();
