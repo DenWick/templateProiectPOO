@@ -6,6 +6,8 @@ consultatie(data, ora, nume_medic, nume_pacient),
 sectie(s) {}
 
 // Getter pentru sectie
+/*
 std::string interventie::get_sectie() {
     return sectie;
 }
+*/

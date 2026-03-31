@@ -10,9 +10,11 @@ reteta::reteta(std::string denumire) : denumire(denumire) {
 }
 
 // Implementarea metodei pentru adaugarea unui medicament în rețetă
+
 void reteta::adaugaMedicament(std::string medicament) {
     medicamente.push_back(medicament);
 }
+
 
 // Implementarea constructorului de copiere
 reteta::reteta(const reteta& alta) {
