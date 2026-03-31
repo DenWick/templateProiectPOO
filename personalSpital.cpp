@@ -4,7 +4,7 @@
 int personalSpital::idCounter = 0;
 
 // Constructorul clasei personalSpital care initializeaza numele, functia si id-ul personalului spitalului
-personalSpital::personalSpital(std::string n, std::string f) : nume(n), functie(f) {
+personalSpital::personalSpital(const std::string& n, const std::string& f) : nume(n), functie(f) {
     id = ++idCounter;
 }
 

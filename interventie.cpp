@@ -1,7 +1,7 @@
 #include "interventie.h"
 
 // Constructorul clasei interventie
-interventie::interventie(std::string data, std::string ora, std::string nume_medic, std::string nume_pacient, std::string s) : 
+interventie::interventie(const std::string& data, const std::string& ora, const std::string& nume_medic, const std::string& nume_pacient, const std::string& s) : 
 consultatie(data, ora, nume_medic, nume_pacient), 
 sectie(s) {}
 

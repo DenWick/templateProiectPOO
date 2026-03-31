@@ -1,7 +1,7 @@
 #include "rezident.h"
 
 // Constructorul clasei rezident care inițializează toate atributele moștenite și atributul specific clasei rezident
-rezident::rezident(std::string n, std::string f, std::string s, int sal, std::string sp, std::string p, int an) 
+rezident::rezident(const std::string& n, const std::string& f, const std::string& s, int sal, const std::string& sp, const std::string& p, int an) 
 : personalSpital(n, f), 
 medic(n, f, s, sal), 
 asistent(n, f, sp, p), 

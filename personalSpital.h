@@ -9,7 +9,7 @@ class personalSpital {
         std::string nume;
         std::string functie;
     public:
-        personalSpital(std::string n, std::string f);
+        personalSpital(const std::string& n, const std::string& f);
 
         int getId() const { return id; }
         

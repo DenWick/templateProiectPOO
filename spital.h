@@ -14,7 +14,7 @@ class spital {
         std::vector<pacient*> pacienti;
         std::vector<reteta*> retete;
     public:
-        spital(std::string n);
+        spital(const std::string& n);
 
         // Metode de adaugare
         void adaugaPersonal(personalSpital* p);
@@ -23,7 +23,7 @@ class spital {
         void adaugaReteta(reteta* r);
 
         // Stergere pacient
-        void stergePacient(std::string numePacient);
+        void stergePacient(const std::string& numePacient);
 
         // Modificare salariu medic
         void modificaSalariuMedic(int idCautat, int salariuNou);

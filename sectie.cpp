@@ -1,7 +1,7 @@
 #include "sectie.h"
 
 // Implementarea constructorului pentru clasa sectie
-sectie::sectie(std::string n) : nume(n) {}
+sectie::sectie(const std::string& n) : nume(n) {}
 
 // Implementarea metodei pentru adaugarea unui medic in sectie
 void sectie::adaugaMedic(medic* m) {
@@ -22,7 +22,7 @@ void sectie::afisare() const {
 
 // Implementarea destructorului pentru clasa sectie
 sectie::~sectie() {
-    for (auto& m : medici) {
+    for (const auto& m : medici) {
         delete &m; // Eliberăm memoria alocată pentru fiecare medic
     }
     medici.clear(); // Golim vectorul de medici

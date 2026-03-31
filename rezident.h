@@ -8,7 +8,7 @@ class rezident: virtual public medic, virtual public asistent {
     private:
         int anRezidentiat;
     public:
-        rezident(std::string n, std::string f, std::string s, int sal, std::string sp, std::string p, int an);
+        rezident(const std::string& n, const std::string& f, const std::string& s, int sal, const std::string& sp, const std::string& p, int an);
 
         void afisare() const override;
 

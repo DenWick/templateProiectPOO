@@ -7,6 +7,6 @@ class interventie : public consultatie {
     private:
         std::string sectie;
     public:
-        interventie(std::string data, std::string ora, std::string nume_medic, std::string nume_pacient, std::string sectie);
+        interventie(const std::string& data, const std::string& ora, const std::string& nume_medic, const std::string& nume_pacient, const std::string& sectie);
         /*std::string get_sectie();*/
     };

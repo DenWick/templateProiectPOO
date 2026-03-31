@@ -4,14 +4,14 @@
 int reteta::contorRetete = 0;
 
 // Implementarea constructorului pentru clasa reteta
-reteta::reteta(std::string denumire) : denumire(denumire) {
+reteta::reteta(const std::string& denumire) : denumire(denumire) {
     contorRetete++;
     idReteta = contorRetete;
 }
 
 // Implementarea metodei pentru adaugarea unui medicament în rețetă
 
-void reteta::adaugaMedicament(std::string medicament) {
+void reteta::adaugaMedicament(const std::string& medicament) {
     medicamente.push_back(medicament);
 }
 

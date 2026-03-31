@@ -3,7 +3,7 @@
 #include <iostream>
 
 // Constructor
-spital::spital(std::string n) : numeSpital(n) {}
+spital::spital(const std::string& n) : numeSpital(n) {}
 
 // Metode de adaugare
 void spital::adaugaPersonal(personalSpital* p) {
@@ -23,7 +23,7 @@ void spital::adaugaReteta(reteta* r) {
 }
 
 // Stergere pacient
-void spital::stergePacient(std::string numeCautat) {
+void spital::stergePacient(const std::string& numeCautat) {
     bool gasit = false;
     for (auto it = pacienti.begin(); it != pacienti.end(); ++it) {
         if ((*it)->get_nume() == numeCautat) {

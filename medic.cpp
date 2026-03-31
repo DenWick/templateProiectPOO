@@ -3,7 +3,7 @@
 #include <iostream>
 
 // Constructorul clasei medic care initializeaza numele, functia, specializarea si id-ul medicului
-medic::medic(std::string n, std::string f, std::string s, int sal) : 
+medic::medic(const std::string& n, const std::string& f, const std::string& s, int sal) : 
 personalSpital(n, f), specializare(s){
     if (sal < 0) {
         throw NegativeSalaryException();

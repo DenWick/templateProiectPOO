@@ -1,7 +1,7 @@
 #include "consultatie.h"
 
 // Constructorul clasei consultatie
-consultatie::consultatie(std::string d, std::string o, std::string m, std::string p) : 
+consultatie::consultatie(const std::string& d, const std::string& o, const std::string& m, const std::string& p) : 
 data(d), 
 ora(o), 
 nume_medic(m), 

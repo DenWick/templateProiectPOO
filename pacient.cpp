@@ -1,7 +1,7 @@
 #include "pacient.h"
 
 // Constructorul clasei Pacient
-pacient::pacient(std::string n, int v) : nume(n), varsta(v) {}
+pacient::pacient(const std::string& n, int v) : nume(n), varsta(v) {}
 
 // Metoda pentru obținerea numelui pacientului
 std::string pacient::get_nume() {

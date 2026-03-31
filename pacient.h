@@ -7,7 +7,7 @@ class pacient {
         std::string nume;
         int varsta;
     public:
-        pacient(std::string n, int v);
+        pacient(const std::string& n, int v);
         std::string get_nume();
         void afisare() const;
 };

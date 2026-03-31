@@ -8,7 +8,7 @@ class sectie {
         std::string nume;
         std::vector<medic*> medici;
     public:
-        sectie(std::string n);
+        sectie(const std::string& n);
         void adaugaMedic(medic* m);
         void afisare() const;
         ~sectie();
