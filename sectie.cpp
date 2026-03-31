@@ -23,7 +23,7 @@ void sectie::afisare() const {
 // Implementarea destructorului pentru clasa sectie
 sectie::~sectie() {
     for (auto& m : medici) {
-        delete &m; // Eliberăm memoria alocată pentru fiecare medic
+        delete m; // Eliberăm memoria alocată pentru fiecare medic
     }
     medici.clear(); // Golim vectorul de medici
 }

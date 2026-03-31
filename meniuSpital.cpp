@@ -2,6 +2,10 @@
 #include "medic.h"
 #include "rezident.h"
 #include "asistent.h"
+#include "consultatie.h"
+#include "interventie.h"
+#include "reteta.h"
+#include "sectie.h"
 #include <iostream>
 #include <string>
 
@@ -16,6 +20,9 @@ void meniuSpital::afisareMeniu() const {
     std::cout<<"3. Afiseaza raport general"<<std::endl;
     std::cout<<"4. Modifica salariu medic"<<std::endl;
     std::cout<<"5. Sterge pacient"<<std::endl;
+    std::cout<<"6. Adauga sectie"<<std::endl;
+    std::cout<<"7. Adauga reteta"<<std::endl;
+    std::cout<<"8. Adauga consultatie"<<std::endl;
     std::cout<<"0. Iesire"<<std::endl;
     std::cout<<"--------------------------------------------- "<<std::endl;
     std::cout<<"Alege o optiune: ";
@@ -100,6 +107,50 @@ void meniuSpital::ruleaza() {
                 std::cout << "Nume pacient de sters: "; std::cin >> numePacient;
                 spitalulMeu.stergePacient(numePacient);
                 std::cout << "Pacient sters cu succes!\n";
+            }
+            // Adaugare sectie
+            else if(optiune == 6){
+                std::string numeSectie;
+                std::cout << "Nume sectie: "; std::cin >> numeSectie;
+                sectie* s = new sectie(numeSectie);
+
+                std::string numeMedic, prenumeMedic, spec;
+                int sal;
+                std::cout << "Adauga un medic in sectie.\n";
+                std::cout << "Nume medic: "; std::cin >> numeMedic;
+                std::cout << "Prenume medic: "; std::cin >> prenumeMedic;
+                std::cout << "Specializare: "; std::cin >> spec;
+                std::cout << "Salariu: "; std::cin >> sal;
+                s->adaugaMedic(new medic(numeMedic, prenumeMedic, spec, sal));
+
+                spitalulMeu.adaugaSectie(s);
+                std::cout << "Sectie adaugata cu succes!\n";
+            }
+            // Adaugare reteta
+            else if(optiune == 7){
+                std::string denumire;
+                std::cout << "Denumire reteta: "; std::cin >> denumire;
+                reteta* r = new reteta(denumire);
+
+                std::string medicament;
+                std::cout << "Adauga un medicament: "; std::cin >> medicament;
+                r->adaugaMedicament(medicament);
+
+                spitalulMeu.adaugaReteta(r);
+                std::cout << "Reteta adaugata cu succes!\n";
+            }
+            // Adaugare consultatie
+            else if(optiune == 8){
+                std::string data, ora, numeMedic, numePacient;
+                std::cout << "Data consultatie: "; std::cin >> data;
+                std::cout << "Ora consultatie: "; std::cin >> ora;
+                std::cout << "Nume medic: "; std::cin >> numeMedic;
+                std::cout << "Nume pacient: "; std::cin >> numePacient;
+
+                consultatie c(data, ora, numeMedic, numePacient);
+                std::cout << "Consultatie programata: " << c.get_data() << " la ora " 
+                          << c.get_ora() << " | Medic: " << c.get_nume_medic() 
+                          << " | Pacient: " << c.get_nume_pacient() << "\n";
             }
 
         }
