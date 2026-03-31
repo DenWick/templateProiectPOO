@@ -4,7 +4,7 @@
 pacient::pacient(const std::string& n, int v) : nume(n), varsta(v) {}
 
 // Metoda pentru obținerea numelui pacientului
-std::string pacient::get_nume() {
+std::string pacient::get_nume() const {
     return nume;
 }
 

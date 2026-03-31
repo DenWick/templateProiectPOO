@@ -8,6 +8,6 @@ class pacient {
         int varsta;
     public:
         pacient(const std::string& n, int v);
-        std::string get_nume();
+        std::string get_nume() const;
         void afisare() const;
 };

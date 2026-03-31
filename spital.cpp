@@ -1,6 +1,7 @@
 #include "spital.h"
 #include "exceptiiSpital.h"
 #include <iostream>
+#include <algorithm>
 
 // Constructor
 spital::spital(const std::string& n) : numeSpital(n) {}
@@ -24,17 +25,14 @@ void spital::adaugaReteta(reteta* r) {
 
 // Stergere pacient
 void spital::stergePacient(const std::string& numeCautat) {
-    bool gasit = false;
-    for (auto it = pacienti.begin(); it != pacienti.end(); ++it) {
-        if ((*it)->get_nume() == numeCautat) {
-            delete *it; // Eliberare memorie
-            pacienti.erase(it); // Stergere din vector
-            gasit = true;
-            std::cout << "Pacientul cu numele " << numeCautat << " a fost sters.\n";
-            break;
-        }
-    }
-    if (!gasit) {
+    auto it = std::find_if(pacienti.begin(), pacienti.end(),
+        [&numeCautat](const pacient* p) { return p->get_nume() == numeCautat; });
+
+    if (it != pacienti.end()) {
+        delete *it;
+        pacienti.erase(it);
+        std::cout << "Pacientul cu numele " << numeCautat << " a fost sters.\n";
+    } else {
         throw IDNotFoundException();
     }
 }
@@ -44,22 +42,22 @@ void spital::afisare() const {
     std::cout << "Spital: " << numeSpital << "\n";
     
     std::cout << "Personal:\n";
-    for (const auto& p : personal) {
+    for (const personalSpital* p : personal) {
         p->afisare();
     }
 
     std::cout << "Sectii:\n";
-    for (const auto& s : sectii) {
+    for (const sectie* s : sectii) {
         s->afisare();
     }
 
     std::cout << "Pacienti:\n";
-    for (const auto& p : pacienti) {
+    for (const pacient* p : pacienti) {
         p->afisare();
     }
 
     std::cout << "Retete:\n";
-    for (const auto& r : retete) {
+    for (const reteta* r : retete) {
         r->afiseaza();
     }
 }

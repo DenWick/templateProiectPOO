@@ -10,7 +10,7 @@ class reteta {
         std::string denumire;
         std::vector<std::string> medicamente;
     public:
-        reteta(const std::string& denumire);
+        explicit reteta(const std::string& denumire);
         reteta(const reteta& alta);
         reteta& operator=(const reteta& alta);
         void adaugaMedicament(const std::string& medicament);

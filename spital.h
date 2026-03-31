@@ -14,7 +14,7 @@ class spital {
         std::vector<pacient*> pacienti;
         std::vector<reteta*> retete;
     public:
-        spital(const std::string& n);
+        explicit spital(const std::string& n);
 
         // Metode de adaugare
         void adaugaPersonal(personalSpital* p);
