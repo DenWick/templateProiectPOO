@@ -24,13 +24,11 @@ void meniuSpital::afisareMeniu() const {
 // Functia de rulare a meniului
 void meniuSpital::ruleaza() {
     int optiune = -1;
-    while(optiune != 0){   
+    while (true) { 
         afisareMeniu();
-        std::cin>>optiune;
-
-        if(optiune == 0){
-            std::cout<<"La revedere!"<<std::endl;
-            break;
+        
+        if (!(std::cin >> optiune)) {
+            break; 
         }
 
         try {
