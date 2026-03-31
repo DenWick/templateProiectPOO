@@ -19,10 +19,8 @@ class spital {
         // Metode de adaugare
         void adaugaPersonal(personalSpital* p);
         void adaugaPacient(pacient* p);
-        /*
         void adaugaSectie(sectie* s);
         void adaugaReteta(reteta* r);
-        */
 
         // Stergere pacient
         void stergePacient(std::string numePacient);
