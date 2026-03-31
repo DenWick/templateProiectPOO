@@ -31,6 +31,7 @@ void spital::stergePacient(const std::string& numeCautat) {
             pacienti.erase(it); // Stergere din vector
             gasit = true;
             std::cout << "Pacientul cu numele " << numeCautat << " a fost sters.\n";
+            break;
         }
     }
     if (!gasit) {

@@ -14,7 +14,7 @@ void sectie::afisare() const {
         std::cout<< "Sectia " << nume << " nu are medici." <<std::endl;
     } else {
         std::cout<< "Sectia " << nume << " are urmatorii medici:" <<std::endl;
-        for (const auto& m : medici) {
+        for (const medic* m : medici) {
             m->afisare();
         }
     }
